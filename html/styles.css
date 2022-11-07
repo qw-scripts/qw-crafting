@@ -1,0 +1,46 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+
+
+#container {
+    font-size: 20px;
+    padding: 25px;
+    color: white;
+    
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    background-color: #232833;
+    opacity: 85%;
+
+    height: 720px;
+    width: 1280px;    
+
+    overflow-y: scroll;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.itemContainer {
+    width: 378px;
+    height: 128px;
+}
+
+#requiredItems {
+    width: 250px;
+    height: 128px;
+    overflow-y: scroll;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+#requiredItems::-webkit-scrollbar {
+    width: 0px;
+    display: none;
+}
+
+#container::-webkit-scrollbar {
+    width: 0px;
+    display: none;
+}
