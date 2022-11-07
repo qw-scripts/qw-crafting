@@ -17,3 +17,8 @@ https://streamable.com/nhimf7
  },
 ```
 - follow the rest of the config to setup all of your crafting locations and items
+
+# Other Stuff
+- Currently the searching is commented out because it is not finished yet, once its done I will add it here and tell everyone on my discord about it.
+
+[Join the Discord](https://dsc.gg/qw-scripts)
