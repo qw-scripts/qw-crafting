@@ -1,7 +1,5 @@
 local QBCore = exports['qb-core']:GetCoreObject()
 local display = false
-local zoneData = {}
-local isInsideEntranceTarget = false
 
 RegisterNUICallback('items', function(data, cb)
     local itemList = {}
@@ -111,7 +109,7 @@ function createCraftingZones()
             options = {
                 {
                     num = 1,
-                    icon = 'fa-solid fa-key',
+                    icon = 'fa-solid fa-ruler',
                     label = "Craft",
                     action = function()
                         TriggerEvent('qw-crafting:client:openCrafting', k)
