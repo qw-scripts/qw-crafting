@@ -3,24 +3,6 @@ local display = false
 local zoneData = {}
 local isInsideEntranceTarget = false
 
-
--- RegisterNUICallback('items', function(_, cb)
-
---     local itemList = {}
---     for k, v in pairs(Config.Items) do
---         itemList[#itemList+1] = {
---             name = v.name,
---             description = v.description,
---             price = v.price,
---             image = Config.Inventory .. "/html/images/" .. QBCore.Shared.Items[k].image,
---             item = k
---         }
---     end
-
---     cb(itemList)
-
--- end)
-
 RegisterNUICallback('items', function(data, cb)
     local itemList = {}
     for k, v in pairs(Config.CraftingLocations[data.location].items) do
