@@ -6,6 +6,7 @@ https://streamable.com/nhimf7
 
 # Install
 - setup your inventory resource in the config under `Config.Inventory`
+- also update the inventory config in `html/script.js`
 - If you are going to be using [mz-skills](https://github.com/MrZainRP/mz-skills) then you need to add the following config to the mz-skills config file...
 
 ```lua
