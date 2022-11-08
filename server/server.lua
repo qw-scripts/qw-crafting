@@ -26,6 +26,19 @@ RegisterNetEvent('qw-crafting:server:craftItem', function(item, location)
 
     Player.Functions.AddItem(item, item.amount)
     TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items[item], "add", item.amount)
+
+    if Config.DiscordLog.active then
+        local discordData = {
+            ["color"] = Config.DiscordLog.color,
+            ["type"] = "rich",
+            ["title"] = "Crafting Log",
+            ["description"] = "**"..GetPlayerName(src).."** has crafted **"..itemData.amount.."x** **"..itemData.name.."**",
+            ["footer"] = {
+                ["text"] = "qw-crafting",
+            },
+        }
+        PerformHttpRequest(Config.DiscordLog.webhook, function(err, text, headers) end, 'POST', json.encode({username = Config.DiscordLog.username, embeds = {discordData}}), { ['Content-Type'] = 'application/json' })
+    end
 end)
 
 

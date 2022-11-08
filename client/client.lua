@@ -154,7 +154,7 @@ end)
 
 AddEventHandler('onResourceStop', function(resourceName)
     if GetCurrentResourceName() == resourceName then
-        for k, v in pairs(zoneData) do
+        for k, v in pairs(Config.CraftingLocations) do
             exports['qb-target']:RemoveZone(k .. '-crafting')
         end
     end
