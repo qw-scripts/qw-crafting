@@ -8,10 +8,10 @@ Config.Debug = false -- Shows Zone debug and other debug related items
 
 Config.DiscordLog = {
     active = true,
-    webhook = '',
+    webhook = 'https://discord.com/api/webhooks/1039390559770509322/wfwfFs5AD6Ti-rgYnd4W_HwW41jDVR-vMqRWHbGZwgjVfM7Q6CLU-eOBuZbDeM83YDcK',
     username = 'qw-script logs',
     image = 'https://cdn.discordapp.com/attachments/1038991411967688774/1039391680564035684/Untitled-1.png',
-    color = 16711680
+    color = 1957995
 }
 
 Config.CraftingLocations = {
@@ -24,38 +24,179 @@ Config.CraftingLocations = {
                 skillRequired = 0, -- Skill Required to Craft Item 
                 materialsNeeded = { -- Materials Needed to Craft Item
                     [1] = {
-                        item = 'iron', -- Name of Item Needed
-                        amount = 150, -- Amount of Item Needed
+                        item = 'metalscrap', -- Name of Item Needed
+                        amount = 20, -- Amount of Item Needed
                     },
                     [2] = {
-                        item = 'rubber',
-                        amount = 150,
+                        item = 'plastic',
+                        amount = 32,
                     },
                 },
             },
-            ['pistol_ammo'] = {
-                amount = 1,
-                name = 'Pistol Ammo',
-                skillRequired = 2,
-                materialsNeeded = {
+            ['screwdriverset'] = { -- Name of Item to Craft
+                amount = 1, -- Amount of Item to Give to the Player
+                name = 'Screwdriver Set', -- Name of Item to Display on the UI
+                skillRequired = 0, -- Skill Required to Craft Item 
+                materialsNeeded = { -- Materials Needed to Craft Item
                     [1] = {
-                        item = 'copper',
-                        amount = 50,
+                        item = 'metalscrap', -- Name of Item Needed
+                        amount = 20, -- Amount of Item Needed
+                    },
+                    [2] = {
+                        item = 'plastic',
+                        amount = 42,
                     },
                 },
             },
-            ['weapon_pistol'] = {
-                amount = 1,
-                name = 'Pistol',
-                skillRequired = 2,
-                materialsNeeded = {
+            ['electronickit'] = { -- Name of Item to Craft
+                amount = 1, -- Amount of Item to Give to the Player
+                name = 'Electronic Kit', -- Name of Item to Display on the UI
+                skillRequired = 0, -- Skill Required to Craft Item 
+                materialsNeeded = { -- Materials Needed to Craft Item
+                    [1] = {
+                        item = 'metalscrap', -- Name of Item Needed
+                        amount = 30, -- Amount of Item Needed
+                    },
+                    [2] = {
+                        item = 'plastic',
+                        amount = 45,
+                    },
+                    [3] = {
+                        item = 'aluminum',
+                        amount = 28,
+                    },
+                },
+            },
+            ['handcuffs'] = { -- Name of Item to Craft
+                amount = 1, -- Amount of Item to Give to the Player
+                name = 'Handcuffs', -- Name of Item to Display on the UI
+                skillRequired = 0, -- Skill Required to Craft Item 
+                materialsNeeded = { -- Materials Needed to Craft Item
+                    [1] = {
+                        item = 'metalscrap', -- Name of Item Needed
+                        amount = 30, -- Amount of Item Needed
+                    },
+                    [2] = {
+                        item = 'steel',
+                        amount = 45,
+                    },
+                    [3] = {
+                        item = 'aluminum',
+                        amount = 28,
+                    },
+                },
+            },
+            ['repairkit'] = { -- Name of Item to Craft
+                amount = 1, -- Amount of Item to Give to the Player
+                name = 'Repair Kit', -- Name of Item to Display on the UI
+                skillRequired = 0, -- Skill Required to Craft Item 
+                materialsNeeded = { -- Materials Needed to Craft Item
+                    [1] = {
+                        item = 'metalscrap', -- Name of Item Needed
+                        amount = 30, -- Amount of Item Needed
+                    },
+                    [2] = {
+                        item = 'steel',
+                        amount = 45,
+                    },
+                    [3] = {
+                        item = 'plastic',
+                        amount = 28,
+                    },
+                },
+            },
+            ['armor'] = { -- Name of Item to Craft
+                amount = 1, -- Amount of Item to Give to the Player
+                name = 'Armor', -- Name of Item to Display on the UI
+                skillRequired = 0, -- Skill Required to Craft Item 
+                materialsNeeded = { -- Materials Needed to Craft Item
+                    [1] = {
+                        item = 'metalscrap', -- Name of Item Needed
+                        amount = 30, -- Amount of Item Needed
+                    },
+                    [2] = {
+                        item = 'steel',
+                        amount = 45,
+                    },
+                    [3] = {
+                        item = 'plastic',
+                        amount = 28,
+                    },
+                    [4] = {
+                        item = 'iron',
+                        amount = 28,
+                    },
+                },
+            },
+            ['drill'] = { -- Name of Item to Craft
+                amount = 1, -- Amount of Item to Give to the Player
+                name = 'Drill', -- Name of Item to Display on the UI
+                skillRequired = 0, -- Skill Required to Craft Item 
+                materialsNeeded = { -- Materials Needed to Craft Item
+                    [1] = {
+                        item = 'metalscrap', -- Name of Item Needed
+                        amount = 30, -- Amount of Item Needed
+                    },
+                    [2] = {
+                        item = 'steel',
+                        amount = 45,
+                    },
+                    [3] = {
+                        item = 'plastic',
+                        amount = 28,
+                    },
+                    [4] = {
+                        item = 'iron',
+                        amount = 28,
+                    },
+                },
+            },
+            ['ironoxide'] = { -- Name of Item to Craft
+                amount = 1, -- Amount of Item to Give to the Player
+                name = 'Ironoxide', -- Name of Item to Display on the UI
+                skillRequired = 0, -- Skill Required to Craft Item 
+                materialsNeeded = { -- Materials Needed to Craft Item
                     [1] = {
                         item = 'iron',
-                        amount = 300,
+                        amount = 28,
                     },
                     [2] = {
-                        item = 'rubber',
-                        amount = 250,
+                        item = 'glass',
+                        amount = 28,
+                    },
+                },
+            },
+            ['aluminumoxide'] = { -- Name of Item to Craft
+                amount = 1, -- Amount of Item to Give to the Player
+                name = 'Aluminumoxide', -- Name of Item to Display on the UI
+                skillRequired = 0, -- Skill Required to Craft Item 
+                materialsNeeded = { -- Materials Needed to Craft Item
+                    [1] = {
+                        item = 'aluminum',
+                        amount = 28,
+                    },
+                    [2] = {
+                        item = 'glass',
+                        amount = 28,
+                    },
+                },
+            },
+            ['pistol_ammo'] = { -- Name of Item to Craft
+                amount = 1, -- Amount of Item to Give to the Player
+                name = 'Pistol Ammo', -- Name of Item to Display on the UI
+                skillRequired = 0, -- Skill Required to Craft Item 
+                materialsNeeded = { -- Materials Needed to Craft Item
+                    [1] = {
+                        item = 'metalscrap',
+                        amount = 28,
+                    },
+                    [2] = {
+                        item = 'steel',
+                        amount = 28,
+                    },
+                    [3] = {
+                        item = 'copper',
+                        amount = 26,
                     },
                 },
             },

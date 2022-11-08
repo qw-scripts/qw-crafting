@@ -24,8 +24,8 @@ RegisterNetEvent('qw-crafting:server:craftItem', function(item, location)
         TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items[v.item], 'remove', v.amount)
     end
 
-    Player.Functions.AddItem(item, item.amount)
-    TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items[item], "add", item.amount)
+    Player.Functions.AddItem(item, itemData.amount)
+    TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items[item], "add", itemData.amount)
 
     if Config.DiscordLog.active then
         local discordData = {
