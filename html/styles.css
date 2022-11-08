@@ -16,10 +16,19 @@
 
     height: 720px;
     width: 1280px;    
+}
 
+#items {
     overflow-y: scroll;
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
+    width: 1230px;
+    height: 580px;
+}
+
+#items::-webkit-scrollbar {
+    width: 0px;
+    display: none;
 }
 
 .itemContainer {
