@@ -8,7 +8,7 @@ Config.Debug = false -- Shows Zone debug and other debug related items
 
 Config.DiscordLog = {
     active = true,
-    webhook = 'https://discord.com/api/webhooks/1039390559770509322/wfwfFs5AD6Ti-rgYnd4W_HwW41jDVR-vMqRWHbGZwgjVfM7Q6CLU-eOBuZbDeM83YDcK',
+    webhook = '',
     username = 'qw-script logs',
     image = 'https://cdn.discordapp.com/attachments/1038991411967688774/1039391680564035684/Untitled-1.png',
     color = 1957995
