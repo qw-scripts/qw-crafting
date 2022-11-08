@@ -124,10 +124,6 @@ RegisterNetEvent('qw-crafting:client:openCrafting', function(tableName)
     SetDisplay(not display, tableName)
 end)
 
-RegisterCommand('craftingtest', function()
-    TriggerEvent('qw-crafting:client:openCrafting', 'devcrafting')
-end)
-
 CreateThread(function()
     while display do
         Citizen.Wait(0)
