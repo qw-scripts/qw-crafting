@@ -51,6 +51,14 @@ RegisterNUICallback('craft', function(data)
             }, {}, {}, function() -- Success
                 TriggerServerEvent('qw-crafting:server:craftItem', data.item, data.location)
                 TriggerEvent('animations:client:EmoteCommandStart', { "c" })
+                if Config.UsingSkills then 
+                    local base = math.random(1, 100)
+                    local random = math.random(1, 100)
+    
+                    if base > random then
+                        exports["mz-skills"]:UpdateSkill("Crafting", 1)
+                    end
+                end
             end, function() -- Cancel
                 ClearPedTasks(PlayerPedId())
                 QBCore.Functions.Notify('You have cancelled the crafting process', 'error')
@@ -59,16 +67,6 @@ RegisterNUICallback('craft', function(data)
         else
             QBCore.Functions.Notify("You don't have enough materials to craft this item", "error")
             TriggerEvent('animations:client:EmoteCommandStart', { "c" })
-
-            
-            if Config.UsingSkills then 
-                local base = math.random(1, 100)
-                local random = math.random(1, 100)
-
-                if base > random then
-                    exports["mz-skills"]:UpdateSkill("Crafting", 1)
-                end
-            end
         end
 
     end, Config.CraftingLocations[data.location].items[data.item].materialsNeeded)
