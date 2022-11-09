@@ -65,10 +65,10 @@ async function loadCraftingTable(tableName) {
   itemsContainer.innerHTML = "";
   data.forEach((item) => {
     const itemElement = document.createElement("div");
-    const classList = ["p-3", "bg-gray-700", "w-full"];
+    const classList = ["p-3", "bg-gray-700","h-[150px]" ];
     itemElement.classList.add(...classList);
     itemElement.innerHTML = `
-                      <div class="flex items-start justify-between itemContainer"> 
+                      <div class="flex items-start justify-between"> 
                         <div id="craftable-item" data-location="${item.location}" data-item="${
                           item.item
                         }" class="w-32 h-32 bg-gray-600 border border-gray-500 flex items-center justify-center relative hover:cursor-pointer hover:bg-gray-800">

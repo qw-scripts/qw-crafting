@@ -31,9 +31,8 @@
     display: none;
 }
 
-.itemContainer {
+#itemContainer {
     width: 378px;
-    height: 128px;
 }
 
 #requiredItems {
