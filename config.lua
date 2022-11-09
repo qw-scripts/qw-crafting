@@ -4,7 +4,7 @@ Config.Inventory = 'qb-inventory' -- Change this to your inventory resource name
 
 Config.UsingSkills = false -- Using mz-skills
 
-Config.Debug = true -- Shows Zone debug and other debug related items
+Config.Debug = false -- Shows Zone debug and other debug related items
 
 Config.DiscordLog = {
     active = true,
