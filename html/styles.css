@@ -11,12 +11,15 @@
     left: 50%;
     transform: translate(-50%, -50%);
 
-    background-color: #232833;
+    background-color: #2F303A;
+
     opacity: 85%;
 
     height: 720px;
     width: 1280px;    
+
 }
+
 
 #items {
     overflow-y: scroll;
@@ -34,6 +37,7 @@
 .itemContainer {
     width: 378px;
     height: 128px;
+    
 }
 
 #requiredItems {

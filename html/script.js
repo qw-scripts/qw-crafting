@@ -1,5 +1,5 @@
 const Config = {
-  inventory: "lj-inventory", // Change this to your inventory resource name
+  inventory: "qb-inventory", // Change this to your inventory resource name
 };
 
 $(function () {
@@ -38,6 +38,7 @@ function craftItem(event) {
   const parent = buttonClicked.parentElement.parentElement;
   const item = parent.querySelector("#craftable-item").dataset.item;
   const location = parent.querySelector("#craftable-item").dataset.location;
+  
 
   $.post(
     "https://qw-crafting/craft",
@@ -65,28 +66,28 @@ async function loadCraftingTable(tableName) {
   itemsContainer.innerHTML = "";
   data.forEach((item) => {
     const itemElement = document.createElement("div");
-    const classList = ["p-3", "bg-gray-700", "w-full"];
+    const classList = ["p-3", "bg-gray-700", "w-full", "hover:cursor-pointer"];
     itemElement.classList.add(...classList);
     itemElement.innerHTML = `
                       <div class="flex items-start justify-between itemContainer"> 
                         <div id="craftable-item" data-location="${item.location}" data-item="${
                           item.item
-                        }" class="w-32 h-32 bg-gray-600 border border-gray-500 flex items-center justify-center relative hover:cursor-pointer hover:bg-gray-800">
+                        }" class="w-32 h-32 bg-gray-600  flex items-center justify-center relative hover:bg-gray-700">
                           <div class="text-sm text-white absolute top-1 left-2 line-clamp-1">${
                             item.name
                           }</div>
                             <img class="w-16 h-16" src='nui://${
                               item.image
                             }' alt="">
-                            <div class="text-sm absolute bottom-1 right-2 text-white">${item.itemWeight.toString()}</div>
-                            <div class="text-sm absolute bottom-1 left-2 text-white">${item.craftableAmount.toString()}x</div>
+                            <div class="text-sm absolute bottom-1 right-2 text-white ">${item.itemWeight.toString()}</div>
+                            <div class="text-sm absolute bottom-1 left-2 text-white ">${item.craftableAmount.toString()}x</div>
                         </div>
                         <div id="requiredItems" class="flex flex-col items-start w-full gap-1 flex-1 pl-4">
                 
                         </div>
                       </div>
                     `;
-    let craftItemButton = itemElement.querySelector("#craftable-item");
+    let craftItemButton = itemElement.querySelector("#requiredItems");
     craftItemButton.addEventListener("click", craftItem);
     itemsContainer.appendChild(itemElement);
 
@@ -101,11 +102,13 @@ async function loadCraftingTable(tableName) {
                           <img class="w-6 h-6" src='nui://${
                             Config.inventory
                           }/html/images/${requiredItem.item}.png' alt="">
-                          <div class="text-sm text-white">${
+                          <div class="text-sm text-white ">${
                             requiredItem.item
                           }: ${requiredItem.amount.toString()}</div>
                       </div>
                     `;
+                    let craftItemButton = itemElement.querySelector("#craftable-item");
+                    craftItemButton.addEventListener("click", craftItem);
       requiredItemsContainer.appendChild(requiredItemElement);
     });
   });

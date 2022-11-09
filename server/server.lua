@@ -33,9 +33,6 @@ RegisterNetEvent('qw-crafting:server:craftItem', function(item, location)
             ["type"] = "rich",
             ["title"] = "Crafting Log",
             ["description"] = "**"..GetPlayerName(src).."** has crafted **"..itemData.amount.."x** **"..itemData.name.."**",
-            ["footer"] = {
-                ["text"] = "qw-crafting",
-            },
         }
         PerformHttpRequest(Config.DiscordLog.webhook, function(err, text, headers) end, 'POST', json.encode({username = Config.DiscordLog.username, embeds = {discordData}, avatar_url = Config.DiscordLog.image}), { ['Content-Type'] = 'application/json' })
     end
