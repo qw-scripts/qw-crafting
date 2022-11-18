@@ -1,8 +1,14 @@
+# ![qw-scripts Banner](https://i.imgur.com/68jLFg3.png)
+
+## qw-scripts discord
+
+<https://dsc.gg/qw-scripts>
+
 # qw-crafting
 QBCore Customizable Crafting System
 
 # Preview
-https://streamable.com/nhimf7
+https://streamable.com/bmjxp0
 
 # Install
 - setup your inventory resource in the config under `Config.Inventory`
@@ -18,8 +24,3 @@ https://streamable.com/nhimf7
  },
 ```
 - follow the rest of the config to setup all of your crafting locations and items
-
-# Other Stuff
-- Currently the searching is commented out because it is not finished yet, once its done I will add it here and tell everyone on my discord about it.
-
-[Join the Discord](https://dsc.gg/qw-scripts)
