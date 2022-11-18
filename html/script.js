@@ -1,5 +1,5 @@
 const Config = {
-  inventory: "lj-inventory", // Change this to your inventory resource name
+  inventory: "qb-inventory", // Change this to your inventory resource name
 };
 
 $(function () {

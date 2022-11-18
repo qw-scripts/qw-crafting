@@ -1,22 +1,23 @@
 Config = {}
 
-Config.Inventory = 'lj-inventory' -- Change this to your inventory resource name
+Config.Inventory = 'qb-inventory' -- Change this to your inventory resource name
 
-Config.UsingSkills = true -- Using mz-skills
+Config.UsingSkills = false -- Using mz-skills
 
 Config.Debug = false -- Shows Zone debug and other debug related items
 
 Config.DiscordLog = {
-    active = true,
+    active = false,
     webhook = '',
     username = 'qw-script logs',
-    image = 'https://cdn.discordapp.com/attachments/1038991411967688774/1039391680564035684/Untitled-1.png',
+    image = '',
     color = 1957995
 }
 
 Config.CraftingLocations = {
     ['gangcrafting'] = {
         location = vector3(1722.96, 3322.76, 41.22), -- Location to Craft the CircleZone for qb-target
+        job = nil, -- Job required to craft at this location (set to nil if no job required)
         items = {
             ['lockpick'] = { -- Name of Item to Craft
                 amount = 1, -- Amount of Item to Give to the Player
@@ -197,6 +198,42 @@ Config.CraftingLocations = {
                     [3] = {
                         item = 'copper',
                         amount = 26,
+                    },
+                },
+            },
+        }
+    },
+    ['mechanic-crafting'] = {
+        location = vector3(-199.42, -1319.86, 31.09), -- Location to Craft the CircleZone for qb-target
+        job = 'mechanic', -- Job required to craft at this location (set to false if no job required)
+        items = {
+            ['lockpick'] = { -- Name of Item to Craft
+                amount = 1, -- Amount of Item to Give to the Player
+                name = 'Lockpick', -- Name of Item to Display on the UI
+                skillRequired = 0, -- Skill Required to Craft Item 
+                materialsNeeded = { -- Materials Needed to Craft Item
+                    [1] = {
+                        item = 'metalscrap', -- Name of Item Needed
+                        amount = 20, -- Amount of Item Needed
+                    },
+                    [2] = {
+                        item = 'plastic',
+                        amount = 32,
+                    },
+                },
+            },
+            ['screwdriverset'] = { -- Name of Item to Craft
+                amount = 1, -- Amount of Item to Give to the Player
+                name = 'Screwdriver Set', -- Name of Item to Display on the UI
+                skillRequired = 0, -- Skill Required to Craft Item 
+                materialsNeeded = { -- Materials Needed to Craft Item
+                    [1] = {
+                        item = 'metalscrap', -- Name of Item Needed
+                        amount = 20, -- Amount of Item Needed
+                    },
+                    [2] = {
+                        item = 'plastic',
+                        amount = 42,
                     },
                 },
             },

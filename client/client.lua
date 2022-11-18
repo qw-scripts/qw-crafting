@@ -99,23 +99,42 @@ end
 function createCraftingZones()
 
     for k, v in pairs(Config.CraftingLocations) do
-
-        exports['qb-target']:AddCircleZone(k .. "-crafting", v.location, 1.0, {
-            name = k .. "-crafting",
-            debugPoly = Config.Debug,
-        }, {
-            options = {
-                {
-                    num = 1,
-                    icon = 'fa-solid fa-ruler',
-                    label = "Craft",
-                    action = function()
-                        TriggerEvent('qw-crafting:client:openCrafting', k)
-                    end,
-                }
-            },
-            distance = 2.5
-        })
+        if v.job ~= nil then
+            exports['qb-target']:AddCircleZone(k .. "-crafting", v.location, 1.0, {
+                name = k .. "-crafting",
+                debugPoly = Config.Debug,
+            }, {
+                options = {
+                    {
+                        num = 1,
+                        icon = 'fa-solid fa-ruler',
+                        label = "Craft",
+                        action = function()
+                            TriggerEvent('qw-crafting:client:openCrafting', k)
+                        end,
+                        job = v.job
+                    }
+                },
+                distance = 2.5
+            })
+        else
+            exports['qb-target']:AddCircleZone(k .. "-crafting", v.location, 1.0, {
+                name = k .. "-crafting",
+                debugPoly = Config.Debug,
+            }, {
+                options = {
+                    {
+                        num = 1,
+                        icon = 'fa-solid fa-ruler',
+                        label = "Craft",
+                        action = function()
+                            TriggerEvent('qw-crafting:client:openCrafting', k)
+                        end,
+                    }
+                },
+                distance = 2.5
+            })
+        end
     end
 end
 
