@@ -37,7 +37,6 @@ RegisterNUICallback('items', function(data, cb)
 end)
 
 RegisterNUICallback('craft', function(data)
-
     SetDisplay(false)
     QBCore.Functions.TriggerCallback('qw-crafting:server:enoughMaterials', function(hasMaterials)
         if hasMaterials then
@@ -49,7 +48,7 @@ RegisterNUICallback('craft', function(data)
                 disableCombat = true,
             }, {
             }, {}, {}, function() -- Success
-                TriggerServerEvent('qw-crafting:server:craftItem', data.item, data.location)
+                TriggerServerEvent('qw-crafting:server:craftItem', data.item, data.location, data.amount)
                 TriggerEvent('animations:client:EmoteCommandStart', { "c" })
                 if Config.UsingSkills then 
                     local base = math.random(1, 100)
@@ -69,7 +68,7 @@ RegisterNUICallback('craft', function(data)
             TriggerEvent('animations:client:EmoteCommandStart', { "c" })
         end
 
-    end, Config.CraftingLocations[data.location].items[data.item].materialsNeeded)
+    end, Config.CraftingLocations[data.location].items[data.item].materialsNeeded, data.amount)
 
 end)
 

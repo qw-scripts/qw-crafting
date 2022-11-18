@@ -1,6 +1,6 @@
 local QBCore = exports['qb-core']:GetCoreObject()
 
-RegisterNetEvent('qw-crafting:server:craftItem', function(item, location) 
+RegisterNetEvent('qw-crafting:server:craftItem', function(item, location, amount) 
 
     local src = source
     local Player = QBCore.Functions.GetPlayer(src)
@@ -20,12 +20,12 @@ RegisterNetEvent('qw-crafting:server:craftItem', function(item, location)
     local itemData = Config.CraftingLocations[location].items[item]
 
     for k, v in pairs(itemData.materialsNeeded) do
-        Player.Functions.RemoveItem(v.item, v.amount)
-        TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items[v.item], 'remove', v.amount)
+        Player.Functions.RemoveItem(v.item, v.amount * amount)
+        TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items[v.item], 'remove', v.amount * amount)
     end
 
-    Player.Functions.AddItem(item, itemData.amount)
-    TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items[item], "add", itemData.amount)
+    Player.Functions.AddItem(item, itemData.amount * amount)
+    TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items[item], "add", itemData.amount * amount)
 
     if Config.DiscordLog.active then
         local discordData = {
@@ -42,13 +42,13 @@ RegisterNetEvent('qw-crafting:server:craftItem', function(item, location)
 end)
 
 
-QBCore.Functions.CreateCallback('qw-crafting:server:enoughMaterials', function(source, cb, materials)
+QBCore.Functions.CreateCallback('qw-crafting:server:enoughMaterials', function(source, cb, materials, amountToCraft)
     local src = source
     local hasItems = false
     local idk = 0
     local player = QBCore.Functions.GetPlayer(source)
     for k, v in pairs(materials) do
-        if player.Functions.GetItemByName(v.item) and player.Functions.GetItemByName(v.item).amount >= v.amount then
+        if player.Functions.GetItemByName(v.item) and player.Functions.GetItemByName(v.item).amount >= v.amount * amountToCraft then
             idk = idk + 1
             if idk == #materials then
                 cb(true)
