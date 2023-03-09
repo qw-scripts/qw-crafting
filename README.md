@@ -4,6 +4,8 @@
 
 <https://dsc.gg/qw-scripts>
 
+# NO LONGER BEING SUPPORTED OR MAINTAINED
+
 # qw-crafting
 QBCore Customizable Crafting System
 
